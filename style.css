@@ -1,0 +1,334 @@
+/* ================================
+   INKAM - MAIN STYLE
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --bg: #060912;
+    --card: #0d1422;
+    --card2: #111a2b;
+    --text: #ffffff;
+    --muted: #8d9ab0;
+    --primary: #20d6c7;
+    --primary2: #087fda;
+    --border: rgba(255,255,255,0.08);
+    --danger: #ff5577;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 15% 0%, rgba(32,214,199,.13), transparent 30%),
+        radial-gradient(circle at 90% 15%, rgba(8,127,218,.13), transparent 28%),
+        var(--bg);
+    color: var(--text);
+}
+
+body {
+    padding-bottom: 90px;
+}
+
+/* ================================
+   APP
+   ================================ */
+
+.app {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+    margin: auto;
+    padding: 18px 15px 30px;
+}
+
+/* ================================
+   HEADER
+   ================================ */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #20d6c7, #4b9dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ================================
+   BALANCE CARD
+   ================================ */
+
+.balance-card {
+    position: relative;
+    overflow: hidden;
+    padding: 23px;
+    border-radius: 22px;
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(135deg,
+        rgba(32,214,199,.16),
+        rgba(8,127,218,.10)),
+        var(--card);
+
+    border: 1px solid rgba(32,214,199,.18);
+    box-shadow: 0 15px 40px rgba(0,0,0,.25);
+}
+
+.balance-card::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    right: -55px;
+    top: -55px;
+    border-radius: 50%;
+    background: rgba(32,214,199,.08);
+}
+
+.balance-title {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.balance {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.balance span {
+    color: var(--primary);
+}
+
+/* ================================
+   QUICK ACTIONS
+   ================================ */
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+    margin-bottom: 20px;
+}
+
+.quick-action {
+    min-height: 78px;
+    padding: 15px;
+    border-radius: 17px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.quick-action:active {
+    transform: scale(.97);
+}
+
+.quick-action .icon {
+    font-size: 23px;
+    margin-bottom: 7px;
+}
+
+.quick-action strong {
+    display: block;
+    font-size: 14px;
+}
+
+.quick-action small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* ================================
+   SECTION TITLE
+   ================================ */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 22px 2px 11px;
+}
+
+.section-title h2 {
+    font-size: 17px;
+}
+
+.section-title span {
+    color: var(--primary);
+    font-size: 12px;
+}
+
+/* ================================
+   EARNING CARD
+   ================================ */
+
+.earning-card {
+    padding: 19px;
+    border-radius: 19px;
+    background: linear-gradient(
+        145deg,
+        rgba(17,26,43,.98),
+        rgba(10,17,30,.98)
+    );
+    border: 1px solid var(--border);
+    margin-bottom: 18px;
+}
+
+.earning-card h3 {
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.earning-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ================================
+   BUTTON
+   ================================ */
+
+button,
+.btn {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 13px 16px;
+    margin-top: 14px;
+    border-radius: 13px;
+
+    color: #001513;
+    font-size: 14px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        #42a8ff
+    );
+
+    box-shadow: 0 7px 22px rgba(32,214,199,.15);
+}
+
+button:active,
+.btn:active {
+    transform: scale(.98);
+}
+
+/* ================================
+   RECENT ACTIVITY
+   ================================ */
+
+.activity {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.activity-item:last-child {
+    border-bottom: 0;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: rgba(32,214,199,.10);
+    font-size: 19px;
+}
+
+.activity-info {
+    flex: 1;
+}
+
+.activity-info strong {
+    display: block;
+    font-size: 13px;
+}
+
+.activity-info small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+.activity-amount {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* ================================
+   BOTTOM NAV
+   ================================ */
+
+.bottom-nav {
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+
+    width: calc(100% - 20px);
+    max-width: 500px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+
+    padding: 8px 6px;
+    border-radius: 20px;
+
+    background: rgba(10,16,28,.94);
+    border: 1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 10px 35px rgba(0,0,0,.45);
+}
+
+.bottom-nav a {
