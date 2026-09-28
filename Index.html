@@ -1,191 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0,
-                   maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <meta name="theme-color" content="#050817">
+  <title>INKAM</title>
 
-    <title>INKAM</title>
+  <meta name="theme-color" content="#060912">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
 <body>
 
-    <!-- APP -->
-    <div class="app">
+<div class="app">
 
-        <!-- HEADER -->
-        <header class="app-header">
-            <div class="brand">
-                <div class="brand-logo">IN</div>
+  <!-- HEADER -->
+  <header>
+    <div>
+      <h1>INKAM</h1>
+      <p>Earn • Complete • Grow</p>
+    </div>
 
-                <div>
-                    <h1>INKAM</h1>
-                    <span>Earn • Task • Grow</span>
-                </div>
-            </div>
-
-            <button class="notification-btn" type="button">
-                🔔
-            </button>
-        </header>
+    <div class="badge">
+      ONLINE
+    </div>
+  </header>
 
 
-        <!-- HOME -->
-        <main id="homePage">
+  <!-- BALANCE -->
+  <section class="balance-card">
 
-            <!-- BALANCE CARD -->
-            <section class="balance-card">
+    <div class="balance-title">
+      Your Balance
+    </div>
 
-                <div class="balance-top">
-                    <span>Your Balance</span>
-                    <span>৳</span>
-                </div>
+    <div class="balance">
+      ৳ 0.00
+    </div>
 
-                <h2>৳ 0.00</h2>
+    <div style="margin-top:8px;color:#8d9ab0;font-size:11px;">
+      Coins: <span id="coinCount">0</span>
+    </div>
 
-                <div class="balance-info">
-                    <div>
-                        <small>Tasks</small>
-                        <strong>0</strong>
-                    </div>
-
-                    <div>
-                        <small>Referrals</small>
-                        <strong>0</strong>
-                    </div>
-
-                    <div>
-                        <small>Today Earn</small>
-                        <strong>৳0.00</strong>
-                    </div>
-                </div>
-
-            </section>
+  </section>
 
 
-            <!-- QUICK ACTIONS -->
-            <section class="quick-grid">
+  <!-- QUICK ACTIONS -->
+  <div class="quick-actions">
 
-                <button class="action-card" type="button">
-                    <div class="action-icon">🎯</div>
-                    <span>Earn Money</span>
-                </button>
+    <a href="#tasks" class="quick-action">
+      <div class="icon">💰</div>
+      <strong>Earn Money</strong>
+      <small>Complete tasks</small>
+    </a>
 
-                <button class="action-card" type="button">
-                    <div class="action-icon">🎁</div>
-                    <span>Daily Bonus</span>
-                </button>
+    <a href="#bonus" class="quick-action">
+      <div class="icon">🎁</div>
+      <strong>Daily Bonus</strong>
+      <small>Claim reward</small>
+    </a>
 
-                <button class="action-card" type="button">
-                    <div class="action-icon">👥</div>
-                    <span>Refer & Earn</span>
-                </button>
+    <a href="#referral" class="quick-action">
+      <div class="icon">👥</div>
+      <strong>Refer & Earn</strong>
+      <small>Invite friends</small>
+    </a>
 
-                <button class="action-card" type="button">
-                    <div class="action-icon">💸</div>
-                    <span>Withdraw</span>
-                </button>
+    <a href="#withdraw" class="quick-action">
+      <div class="icon">💸</div>
+      <strong>Withdraw</strong>
+      <small>Request payment</small>
+    </a>
 
-                <button class="action-card" type="button">
-                    <div class="action-icon">📜</div>
-                    <span>History</span>
-                </button>
+    <a href="#history" class="quick-action">
+      <div class="icon">📊</div>
+      <strong>History</strong>
+      <small>Your activity</small>
+    </a>
 
-                <button class="action-card" type="button">
-                    <div class="action-icon">👤</div>
-                    <span>Profile</span>
-                </button>
+    <a href="#profile" class="quick-action">
+      <div class="icon">👤</div>
+      <strong>Profile</strong>
+      <small>Account details</small>
+    </a>
 
-            </section>
-
-
-            <!-- EARNING SECTION -->
-            <section class="section">
-
-                <div class="section-title">
-                    <h3>Start Earning</h3>
-                    <span>›</span>
-                </div>
-
-                <div class="earning-card">
-
-                    <div class="earning-icon">🚀</div>
-
-                    <div class="earning-content">
-                        <h4>Complete Tasks</h4>
-                        <p>Complete simple tasks and earn coins.</p>
-                    </div>
-
-                    <button type="button">
-                        Start
-                    </button>
-
-                </div>
-
-            </section>
+  </div>
 
 
-            <!-- RECENT ACTIVITY -->
-            <section class="section">
+  <!-- TASKS -->
+  <section id="tasks">
 
-                <div class="section-title">
-                    <h3>Recent Activity</h3>
-                </div>
+    <div class="section-title">
+      <h2>🚀 Start Earning</h2>
+      <span>Tasks</span>
+    </div>
 
-                <div class="empty-state">
-                    <div>📊</div>
-                    <p>No earning activity yet</p>
-                    <small>Complete your first task to start earning.</small>
-                </div>
+    <div class="earning-card">
 
-            </section>
+      <h3>Complete Simple Tasks</h3>
 
-        </main>
+      <p>
+        Complete available tasks and collect coins.
+      </p>
 
-
-        <!-- BOTTOM NAVIGATION -->
-        <nav class="bottom-nav">
-
-            <button class="nav-item active" type="button">
-                <span>⌂</span>
-                <small>Home</small>
-            </button>
-
-            <button class="nav-item" type="button">
-                <span>🎯</span>
-                <small>Tasks</small>
-            </button>
-
-            <button class="nav-item" type="button">
-                <span>🎁</span>
-                <small>Bonus</small>
-            </button>
-
-            <button class="nav-item" type="button">
-                <span>👥</span>
-                <small>Referral</small>
-            </button>
-
-            <button class="nav-item" type="button">
-                <span>👤</span>
-                <small>Profile</small>
-            </button>
-
-        </nav>
+      <button onclick="completeTask(5)">
+        COMPLETE TASK +5
+      </button>
 
     </div>
 
+  </section>
 
-    <!-- TELEGRAM MINI APP -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-    <!-- MAIN SCRIPT -->
-    <script src="script.js"></script>
+  <!-- BONUS -->
+  <section id="bonus">
+
+    <div class="section-title">
+      <h2>🎁 Daily Bonus</h2>
+      <span>Daily</span>
+    </div>
+
+    <div class="card">
+
+      <h3>Daily Reward</h3>
+
+      <p>
+        Claim your daily reward once every day.
+      </p>
+
+      <button onclick="claimDailyBonus()">
+        CLAIM +10 COINS
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- REFERRAL -->
+  <section id="referral">
+
+    <div class="section-title">
+      <h2>👥 Refer & Earn</h2>
+      <span id="refCount">0 Referrals</span>
+    </div>
+
+    <div class="card">
+
+      <h3>Invite Friends</h3>
+
+      <p>
+        Share your referral link with friends.
+      </p>
+
+      <button onclick="copyReferralLink()">
+        COPY REFERRAL LINK
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- WITHDRAW -->
+  <section id="withdraw">
+
+    <div class="section-title">
+      <h2>💸 Withdraw</h2>
+    </div>
+
+    <div class="card">
+
+      <h3>Withdraw Balance</h3>
+
+      <p>
+        Your available balance will appear here.
+      </p>
+
+      <button onclick="requestWithdraw()">
+        REQUEST WITHDRAW
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- HISTORY -->
+  <section id="history">
+
+    <div class="section-title">
+      <h2>📊 Recent Activity</h2>
+    </div>
+
+    <div class="activity" id="historyList">
+
+      <div class="activity-item">
+
+        <div class="activity-icon">
+          📝
+        </div>
+
+        <div class="activity-info">
+          <strong>No activity yet</strong>
+          <small>Complete a task to get started</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROFILE -->
+  <section id="profile">
+
+    <div class="section-title">
+      <h2>👤 Profile</h2>
+    </div>
+
+    <div class="card">
+
+      <h3 class="user-name">INKAM User</h3>
+
+      <p>
+        Coins: <span id="profileCoins">0</span>
+      </p>
+
+      <p style="margin-top:6px;">
+        Referrals: <span id="profileRefs">0</span>
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottom-nav">
+
+  <a href="#" class="active">
+    <span class="nav-icon">🏠</span>
+    Home
+  </a>
+
+  <a href="#tasks">
+    <span class="nav-icon">💰</span>
+    Tasks
+  </a>
+
+  <a href="#bonus">
+    <span class="nav-icon">🎁</span>
+    Bonus
+  </a>
+
+  <a href="#referral">
+    <span class="nav-icon">👥</span>
+    Referral
+  </a>
+
+  <a href="#profile">
+    <span class="nav-icon">👤</span>
+    Profile
+  </a>
+
+</nav>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
